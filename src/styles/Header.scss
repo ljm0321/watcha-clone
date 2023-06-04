@@ -1,0 +1,44 @@
+$active: #292a32;
+
+.Header {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    background: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid #d2d2d2;
+}
+
+.headerWrapper {
+    width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+    height: 4.5rem;
+    transition: all 700ms ease 0s;
+
+    &.scrolled {
+        height: 3.5rem;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 0px 0px;
+
+        .header-item {
+            padding-top: 11px;
+        }
+    }
+}
+
+.header-item {
+    font-size: 1.68rem;
+    margin: 0 0.9rem;
+    padding-top: 21px;
+    padding-bottom: 15px;
+    text-align: center;
+    li {
+        color: #a5a5aa;
+        font-weight: bold;
+        
+        @at-root .active#{&} {
+            color: $active;
+        }
+    }
+}

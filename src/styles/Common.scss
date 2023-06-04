@@ -1,0 +1,17 @@
+@use 'foundation/base';
+
+.Content {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+}
+
+.Loading {
+    > svg {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        left: 50%;
+        fill: rgb(255, 47, 110);
+        transform: (rotate(170deg) translateX(calc(-50% + 6vw)));
+    }
+}

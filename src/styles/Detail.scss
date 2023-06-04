@@ -1,0 +1,393 @@
+.Detail {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    margin-bottom: 4.5rem;
+}
+
+.line {
+    width: 100%;
+    margin: 0 20px;
+    height: 1px;
+    background: rgb(240, 240, 240);
+}
+
+%icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: fixed;
+    fill: #fff;
+    z-index: 5;
+    transition: all 1s ease;
+
+    &.scrolled {
+        fill: rgb(0, 0, 0);
+    }
+}
+
+.sectionTop {
+    position: relative;
+    box-sizing: border-box;
+    height: 13rem;
+    overflow: hidden;
+    width: 100vw;
+
+    .icon-back {
+        @extend %icon;
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .icon-share {
+        @extend %icon;
+        right: 1rem;
+        top: 1rem;
+    }
+}
+
+.detail-backdrop {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    filter: blur(15px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0px;
+        left: 0px;
+        background-image: linear-gradient(-180deg, rgba(20, 20, 20, 0.3) 1%, rgba(20, 20, 20, 0.5) 67%, rgb(20, 20, 20) 98%);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.sectionTop-detail {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    align-items: center;
+    padding: 0px 5.3vw 4.8vw;
+
+    .datail-img {
+        overflow: hidden;
+        display: block;
+        position: relative;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        width: 21.4vw;
+        height: 31vw;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 3px;
+        background: rgb(248, 248, 248);
+
+        > img {
+            vertical-align: top;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            object-fit: cover;
+        } 
+    }
+    
+    .detail-wrap {
+        margin-left: 18px;
+
+        .detail-title {
+            color: rgb(255, 255, 255);
+            font-size: 1.5rem;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        ul {
+            display: flex;
+            font-size: 0.9375rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            box-sizing: border-box;
+            margin-top: 0.8vw;
+            opacity: 0.8;
+
+            li {
+                color: rgb(221, 222, 228);
+                max-width: 60%;
+                white-space: normal;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                height: 1.2rem;
+            }
+        }
+    }
+}
+
+.sectionRating {
+    text-align: center;
+    padding: 10.1vw 4vw 0;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+
+    .rating-stars {
+        width: 228px;
+        height: 66px;
+        margin: 20px auto 24px;
+
+        li {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: rgb(120, 120, 120);
+            text-align: center;
+        }
+
+        svg {
+            width: 44px;
+            height: 44px;
+            fill: rgb(255, 221, 99);
+        }
+    }
+
+    .rating-line {
+        background: rgb(237, 237, 237);
+        width: 100%;
+        height: 1px;
+    }
+
+    .rating-list {
+        width: 100%;
+        margin: 4.4vw -0.4vw;  
+        display: flex;
+
+        li {
+            background: none;
+            padding: 0px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            color: rgb(41, 42, 50);
+            font-size: 0.75rem;
+            letter-spacing: -0.1px;
+            line-height: 1.1;
+            text-align: center;
+            width: calc(25% - 3px);
+            height: 11.4vw;
+            margin: 0px 0.4rem;
+            min-width: 60px;
+
+            svg {
+                width: 1.5rem;
+                height: auto;
+            }
+        }
+    }
+}
+.section-title {
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+    line-height: 28px;
+    margin: 16px 0px 16px;
+
+    span {
+        color: rgb(255, 47, 110);
+        font-size: 15px;
+    }
+}
+
+.sectionInfo {
+    border-top: 12px solid rgb(248, 248, 248);
+
+    .info-wrap {
+        padding: 0 20px;
+        
+        li {
+            color: rgb(74, 74, 74);
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: -0.2px;
+            line-height: 24px;
+
+            &:last-child {
+                margin-top: 8px;
+                word-break: break-all;
+                max-height: 72px;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgb(240, 240, 240);
+            }
+        }
+    }
+}
+
+.slick-track {
+    display: flex;
+}
+
+.Review {
+    margin-top: 14px;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    position: relative;
+
+    .slick-slide {
+        height: 78.1vw;
+        margin: 0 5px;
+        width: 89.3vw;
+    }
+
+    .slick-list {
+        margin: 0 -5px;
+    }
+}
+
+.review-box {
+    width: 89.3vw;
+    background-color: rgb(242, 242, 242);
+    box-sizing: border-box;
+    padding: 0px 12px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .review-top {
+        display: flex;
+        border-bottom: 1px solid rgb(229, 229, 229);
+        overflow: hidden;
+        align-items: center;
+
+        .author {
+            flex: 1 1 0%;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: -0.7px;
+            line-height: 22px;
+            overflow: hidden;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(255, 255, 255);
+            color: rgb(74, 74, 74);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+            line-height: 19px;
+            box-sizing: border-box;
+            min-width: 55px;
+            height: 26px;
+            padding: 0px 8px;
+            border: 1px solid rgb(234, 234, 234);
+            border-radius: 13px;
+            margin: 15px 0px 15px 16px;
+        }
+    }
+    
+    .content {
+        height: 120px;
+        margin: 12px 0px 15px;
+        overflow: hidden;
+    }
+
+    .review-icon {
+        display: flex;
+        align-items: center;
+        height: 44px;
+        border-top: 1px solid rgb(229, 229, 229);
+        border-bottom: 1px solid rgb(229, 229, 229);
+        overflow: hidden;
+
+        svg {
+            fill: rgb(120, 120, 120);
+            width: 16px;
+            height: 16px;
+            margin: 0 3px;
+        }
+        
+        li {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+            line-height: 19px;
+            color: rgb(120, 120, 120);
+
+            &:last-child {
+                margin-left: 13px;
+            }
+        }
+    }
+
+    .like {
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: -0.7px;
+        line-height: 22px;
+        padding: 9.5px 8px;
+        margin: 0px -4px;
+        color: rgb(255, 47, 110);
+    }
+}
+
+.Gallery {
+    padding-left: 20px;
+    padding-bottom: 30px;
+
+    img {
+        width: 42.6vw;
+        margin: 0 5px;
+    }
+}
+
+.Similar {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    a {
+        width: 29vw;
+    }
+
+    .Card {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+        
+        .card-image {
+            height: 43vw;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .card-detail__grade span {
+            color: rgb(120, 120, 120);
+        }
+    }
+}

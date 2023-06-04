@@ -1,0 +1,64 @@
+.Card {
+    width: 32.3vw;
+    padding: 0 1.3vw;
+    margin-bottom: 0;
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 48.9vw;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 1.3vw;
+        background: #f8f8f8;
+        border: 1px solid #eae9e8;
+    }
+}
+
+.card-image__badge {
+    position: absolute;
+    bottom: 2vw;
+    left: 1vw;
+    background-color: rgba(0, 0, 0, 0.77);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    letter-spacing: normal;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    text-align: center;
+    width: 6.4vw;
+    height: 6.4vw;
+    border-radius: 1vw;
+}
+
+.card-detail {
+    margin: 1.6vw 1.3vw 0 0;
+    text-align: left;
+    width: calc(100% - 10px);
+}
+
+.card-detail__title {
+    display: -webkit-box;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+    white-space: normal;
+    max-height: 36px;
+    overflow: hidden;
+    margin-bottom: 1.1vw;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card-detail__grade {
+    color: #555765;
+    font-weight: 400;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    line-height: 1;
+}
